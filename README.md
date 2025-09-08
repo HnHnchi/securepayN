@@ -1,4 +1,4 @@
-# SecurePat - Full Stack Application
+# SecurePay - Full Stack Application
 
 A full-stack application with a Python Flask backend and React frontend for monitoring system health and status.
 
