@@ -1,0 +1,21 @@
+{
+  "keys": {
+    "client": {
+      "private": "crypto/keys/client_rsa_private.pem",
+      "public": "crypto/keys/client_rsa_public.pem"
+    },
+    "server": {
+      "private": "crypto/keys/rsa_private.pem",
+      "public": "crypto/keys/rsa_public.pem"
+    }
+  },
+  "aes": {
+    "key1": "6PSVMmaAEfaj3cueT0LMvbTIP8NxcHQm1lI/PXIbp4M=",
+    "key2": "YMZhChiGffKC2G/DEkJKUFxmiANqBigBFc3zbYaRyBI="
+  },
+  "certificate": {
+    "path": "crypto/certs/server.crt",
+    "keystore": "crypto/certs/server.p12",
+    "password": "securepat123"
+  }
+}

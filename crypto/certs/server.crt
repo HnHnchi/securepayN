@@ -1,0 +1,34 @@
+# Self-Signed Certificate Instructions
+
+This is a placeholder for the self-signed certificate.
+To generate a proper certificate, use OpenSSL:
+
+openssl req -x509 -newkey rsa:2048 -keyout rsa_private.pem -out server.crt -days 365 -nodes -subj "/C=US/ST=State/L=City/O=SecurePat/OU=IT Department/CN=localhost"
+
+Or use the following command with the existing key:
+openssl req -x509 -key rsa_private.pem -out server.crt -days 365 -subj "/C=US/ST=State/L=City/O=SecurePat/OU=IT Department/CN=localhost"
+
+Certificate Info:
+{
+  "subject": {
+    "C": "US",
+    "ST": "State",
+    "L": "City",
+    "O": "SecurePat",
+    "OU": "IT Department",
+    "CN": "localhost"
+  },
+  "issuer": {
+    "C": "US",
+    "ST": "State",
+    "L": "City",
+    "O": "SecurePat",
+    "OU": "IT Department",
+    "CN": "localhost"
+  },
+  "notBefore": "2025-09-07T22:19:12.316Z",
+  "notAfter": "2026-09-07T22:19:12.317Z",
+  "serialNumber": "01",
+  "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvLEo9gxnTLzWV7edZHAj\nrR4Md6iTSdFaleSBWcMXKdPIrZ9nDd4iBx3WG2ExleZ7zAOzWmKU+N6O7ZH3Uxqr\nb1PZHPZdZ45Nna1XziI+YBUrC+cRMnPMryM4iHmlF/gQO4sjHD4OE55PfVD5dcH7\n7CpHraJcG3wRVB95icaNgrKTyDLCcWAqkAmU67fUSaQJgRPSCC0WMivZEBV7ZKbl\nLtf5SgQ3TnvqEpojBSmaLdlVLBhiIbBD2nKqZnJrhu0Nt06PUhhWsajh2hqP+6Ow\nhyhYckN56xaalboVP54AnJ5lREYWOroZFVDFLf6eFB6yarpwfBxWnjwVqX1HZmhN\nQwIDAQAB\n-----END PUBLIC KEY-----\n",
+  "privateKey": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8sSj2DGdMvNZX\nt51kcCOtHgx3qJNJ0VqV5IFZwxcp08itn2cN3iIHHdYbYTGV5nvMA7NaYpT43o7t\nkfdTGqtvU9kc9l1njk2drVfOIj5gFSsL5xEyc8yvIziIeaUX+BA7iyMcPg4Tnk99\nUPl1wfvsKketolwbfBFUH3mJxo2CspPIMsJxYCqQCZTrt9RJpAmBE9IILRYyK9kQ\nFXtkpuUu1/lKBDdOe+oSmiMFKZot2VUsGGIhsEPacqpmcmuG7Q23To9SGFaxqOHa\nGo/7o7CHKFhyQ3nrFpqVuhU/ngCcnmVERhY6uhkVUMUt/p4UHrJqunB8HFaePBWp\nfUdmaE1DAgMBAAECggEAHTKYsQIYVfJ+hFJAQ5NqodYdfcKTEAAaMUmLjnU2t10z\nF1KsIqQ1xb4jLFds0dI5Y8dK0HiirqPZn/9PMwfUcUSbOvUQXP7TGcwB4z6/QiTk\nZVIbAiCTEqKzk8Km/j9/W4dbJnqfuP9tM2n9P/CFZ/Te5IpUEFixYcABEYWszgVJ\n/P41zXUSiV9QvSaupa6Fie2TGQfwVrblOP92Kzuknvp6UyrO9WakqS9ZU920LoAo\nu0NuT9cx433TFijSiJ79SiZhrTGOXHHWiOT5Wyacip3HI4Edj5VpkYblvSnK/Ezk\n/viM5gyYgqEB1CPlt7tajC9pBa1QQh9HpYZo1UbCSQKBgQDeQgAoVuVKGrdTkGjC\nYBhY3AkQsJerHM+GQd0hUHM5hFiswOy0mq3QeOHlaQqt/Us1vCTGxCjcna8m3viJ\nii2S0frIqT+y2A8GXMv5w15ujFK1+pnuWtlCLxWaFTHvFqGSWTEG5sIjPxEbpfFy\n2fjV2vRWaJkdUhzPaE/nUUnirQKBgQDZVqICWDRyLla4fzH+cJ9TB0OHSm467TEB\nmR1WJgdla90/7CVqtxjLrShJPe81y9KhGvnaV6jVTzL6GdfstG+PQ6W4/O2ngqfK\n6S/vJsb4L4k6IGmTOFC0I6751r/515RUzWgduitX1CPuxa3Z0wyivTbWKuFPX/nE\ngUu1qvPdrwKBgEXEOgBvpnHoiPt2LSw2te3OxBm1FSblWE8whZVbh4/ad2ti8+qN\nU1pJV7+HhY6wH9eyQ2kRUjJOXRi6jRG/iia4OxyZ5CDjqXO51V2FcjMJYT02ePNV\nGTWpSgKf/JisZfNmg/lCnlYqCdi/8la3DWEz5dbp5oZJrDl+6PYXkjXRAoGBAKML\nX9ycaTPjWYFtQocb3BqAj4NWLh2cxS/qutxfCRtn8QI8WNGW7E4X5+oSQXs9HhVo\nVFodevYTRS3k51yW/D4gxJljfbI1zUTm7OPfVlLn7m2h1THxhHGvd1vMZBa9SHTZ\n56qteEiaSB6fQ83ui0Mm6ZV/c6mFWa22RaLSzcHXAoGAAvaLA0Q5FLd8EuRF0bmn\n0LnG76R9IXUyv8Wjr8ithxkWEjxCBELUTYH625VOVAgqholNMYG3b8z2C6Iq7tSI\nwC/7BrDHgLQmsF1leRVgaEF36NEPUsD/zaJa2cYWuzrse8HhskHXamu+/AxeN2QX\nEP0nttd9/gdi0kGnGCipHC8=\n-----END PRIVATE KEY-----\n"
+}

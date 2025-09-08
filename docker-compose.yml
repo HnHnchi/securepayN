@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: securepat-backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+      - backend_data:/app/data
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    networks:
+      - securepat-network
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: securepat-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - securepat-network
+    restart: unless-stopped
+
+volumes:
+  backend_data:
+
+networks:
+  securepat-network:
+    driver: bridge

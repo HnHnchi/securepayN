@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: securepat-backend-dev
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+      - backend_data:/app/data
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    networks:
+      - securepat-network
+    restart: unless-stopped
+    command: python app.py
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: securepat-frontend-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_API_URL=http://localhost:5000
+    networks:
+      - securepat-network
+    restart: unless-stopped
+
+volumes:
+  backend_data:
+
+networks:
+  securepat-network:
+    driver: bridge
